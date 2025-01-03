@@ -1,0 +1,324 @@
+/* Importar las fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Zen+Dots&display=swap');
+
+body {
+  font-family: "Zen Dots", serif;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evitar que se desborde el video */
+  position: relative; /* Necesario para posicionar el video como fondo */
+  animation: fadeIn 2s ease-out; /* Animación de aparición */
+}
+
+.video-background {
+  position: absolute; /* Posiciona el video detrás del contenido */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+  z-index: -1; 
+  filter: brightness(0.5); /* Coloca el video por debajo del contenido */
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  opacity: 0; /* Comienza oculto */
+  animation: fadeIn 2s ease-out forwards 0.5s; /* Aparece después de 0.5s con un fade-in */
+}
+
+/* Animación para la aparición */
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(20px); /* Empieza con desplazamiento hacia abajo */
+  }
+  100% {
+    opacity: 1; /* Termina visible */
+    transform: translateY(0); /* Se mueve a su posición original */
+  }
+}
+
+
+
+
+/* Imagen de perfil */
+.profile-image {
+  max-width: 300px;
+  border-radius: 10px;
+  opacity: 0; /* Comienza oculto */
+  animation: fadeIn 2s ease-out forwards 1s; /* Aparece después de 1s */
+}
+
+/* Estilo de texto principal */
+.text {
+  font-size: 2rem;
+  margin-top: 10px; /* Ajusta el espacio superior */
+  margin-bottom: 10px; /* Ajusta el espacio inferior */
+  line-height: 1.5; /* Ajusta la altura de las líneas entre palabras */
+  opacity: 0; /* Comienza oculto */
+  animation: fadeIn 2s ease-out forwards 1.5s; /* Aparece después de 1.5s */
+}
+
+/* Estilo de botones */
+.text-button {
+  font-size: 2rem;  /* Igual al tamaño del texto principal */
+  color: #10b981;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none; /* Elimina el subrayado */
+  opacity: 0; /* Comienza oculto */
+  animation: fadeIn 2s ease-out forwards 2s; /* Aparece después de 2s */
+}
+
+/* Estilo especial para "Alex" */
+.text-button.alex {
+  background-color: #FF5757; /* Color de fondo */
+  color: #000; /* Color de texto */
+  padding: 1px 20px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el hover */
+}
+
+/* Efecto hover para el botón "Alex" */
+.text-button.alex:hover {
+  background-color: #FF8383; /* Fondo más claro al hacer hover */
+  color: #000; /* Mantener el texto en negro */
+  transform: scale(1.05); /* Opcional: efecto de escala al hacer hover */
+}
+
+/* Aseguramos que el ícono también se vea bien en el hover */
+.text-button.alex:hover .icon {
+  filter: brightness(0); /* Ajustar brillo del icono si es necesario */
+}
+
+.text-button.alex .icon {
+  width: 18px; /* Tamaño del icono */
+  height: 18px;
+  padding-right: 5px; /* Tamaño del icono */
+}
+
+/* Estilo especial para "Desarrollador Fullstack" */
+.text-button.fullstack {
+  background-color: #008FFD; /* Color de fondo */
+  color: #000; /* Color de texto */
+  padding: 1px 20px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el hover */
+}
+
+/* Efecto hover para el botón "Desarrollador Fullstack" */
+.text-button.fullstack:hover {
+  background-color: #66A9FF; /* Fondo más claro al hacer hover */
+  color: #000; /* Mantener el texto en negro */
+  transform: scale(1.05); /* Opcional: efecto de escala al hacer hover */
+}
+
+/* Aseguramos que el ícono también se vea bien en el hover */
+.text-button.fullstack:hover .icon {
+  filter: brightness(0); /* Ajustar brillo del icono si es necesario */
+}
+
+.text-button.fullstack .icon {
+  width: 18px; /* Tamaño del icono */
+  height: 18px;
+  padding-right: 5px; /* Tamaño del icono */
+}
+
+/* Estilo especial para "Frontend" */
+.text-button.frontend {
+  background-color: #00B96D; /* Color de fondo */
+  color: #000; /* Color de texto */
+  padding: 1px 20px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el hover */
+}
+
+/* Efecto hover para el botón "Frontend" */
+.text-button.frontend:hover {
+  background-color: #66D9A1; /* Fondo más claro al hacer hover */
+  color: #000; /* Mantener el texto en negro */
+  transform: scale(1.05); /* Opcional: efecto de escala al hacer hover */
+}
+
+/* Aseguramos que el ícono también se vea bien en el hover */
+.text-button.frontend:hover .icon {
+  filter: brightness(0); /* Ajustar brillo del icono si es necesario */
+}
+
+.text-button.frontend .icon {
+  width: 18px; /* Tamaño del icono */
+  height: 18px;
+  padding-right: 5px; /* Tamaño del icono */
+}
+
+/* Estilo especial para "¡Hablemos!" */
+.text-button.hablemos {
+  background-color: #FA6EE3; /* Color de fondo */
+  color: #000; /* Color de texto */
+  padding: 1px 20px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el hover */
+}
+
+/* Efecto hover para el botón "¡Hablemos!" */
+.text-button.hablemos:hover {
+  background-color: #F8A4D9; /* Fondo más claro al hacer hover */
+  color: #000; /* Mantener el texto en negro */
+  transform: scale(1.05); /* Opcional: efecto de escala al hacer hover */
+}
+
+/* Aseguramos que el ícono también se vea bien en el hover */
+.text-button.hablemos:hover .icon {
+  filter: brightness(0); /* Ajustar brillo del icono si es necesario */
+}
+
+.text-button.hablemos .icon {
+  width: 18px; /* Tamaño del icono */
+  height: 18px;
+  padding-right: 5px; /* Tamaño del icono */
+}
+
+//* --- Estilos Responsivos --- */
+
+/* Móviles y pantallas pequeñas */
+@media (max-width: 600px) {
+  .profile-image {
+    max-width: 150px; /* Reducir el tamaño de la imagen en móviles */
+  }
+
+  .text {
+    font-size: 1.2rem; /* Ajuste en el tamaño del texto */
+    margin: 10px 0;
+    line-height: 1.8; /* Más espacio entre líneas en el texto */
+  }
+
+  /* Separar los textos específicos */
+  .alex {
+    margin-bottom: 10px; /* Añadir más margen abajo */
+  }
+
+  .fullstack {
+    margin-top: 20px; /* Añadir más margen arriba */
+  }
+
+  .container {
+    width: 90%; /* Reducir el ancho del contenedor para pantallas pequeñas */
+    max-width: 600px; /* Definir un max-width para evitar que sea demasiado grande */
+  }
+
+  .text-button {
+    font-size: 1rem;  /* Reducir el tamaño del texto en los botones */
+    padding: 8px 16px; /* Reducir el padding de los botones */
+    white-space: nowrap; /* Evitar que el texto se rompa en varias líneas */
+    width: auto; /* Asegurarse de que los botones no se estiren en pantallas pequeñas */
+    line-height: 1.8; /* Más espacio entre líneas en los botones */
+  }
+
+  /* Ajustar tamaño del icono en móviles */
+  .text-button .icon {
+    width: 14px; /* Reducir el tamaño del icono */
+    height: 14px; /* Reducir el tamaño del icono */
+    padding-right: 5px; /* Ajuste en el espacio entre el texto y el icono */
+  }
+
+  /* Evitar que los botones se dividan */
+  .text-button.alex,
+  .text-button.fullstack,
+  .text-button.frontend,
+  .text-button.hablemos {
+    display: inline-flex; /* Usar inline-flex para evitar el quiebre de los botones */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Hover en móviles */
+  .text-button.alex:hover,
+  .text-button.fullstack:hover,
+  .text-button.frontend:hover,
+  .text-button.hablemos:hover {
+    transform: scale(1.05); /* Efecto de escala al hacer hover */
+  }
+
+  /* Hover en el ícono en móviles */
+  .text-button.alex:hover .icon,
+  .text-button.fullstack:hover .icon,
+  .text-button.frontend:hover .icon,
+  .text-button.hablemos:hover .icon {
+    filter: brightness(0); /* Ajustar brillo del icono */
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .text {
+    font-size: 1.3rem; /* Ajuste en el tamaño del texto en tabletas */
+    line-height: 1.8; /* Más espacio entre líneas en el texto */
+  }
+
+  /* Separar los textos específicos */
+  .alex {
+    margin-bottom: 8px; /* Añadir más margen abajo */
+  }
+
+  .fullstack {
+    margin-top: 8px; /* Añadir más margen arriba */
+  }
+
+  .container {
+    width: 100%; /* Ajuste en el ancho del contenedor en tabletas */
+    max-width: 750px; /* Definir un max-width para evitar que sea demasiado grande */
+  }
+
+  .text-button {
+    font-size: 1.3rem;  /* Ajuste en el tamaño de los botones en tabletas */
+    padding: 10px 0px; /* Ajuste en el padding de los botones en tabletas */
+    line-height: 1.8; /* Más espacio entre líneas en los botones */
+  }
+
+  /* Ajustar tamaño del icono en tabletas */
+  .text-button .icon {
+    width: 18px; /* Ajustar el tamaño del icono */
+    height: 18px; /* Ajustar el tamaño del icono */
+    padding-right: 5px; /* Ajuste en el espacio entre el texto y el icono */
+  }
+
+  /* Evitar que los botones se dividan */
+  .text-button.alex,
+  .text-button.fullstack,
+  .text-button.frontend,
+  .text-button.hablemos {
+    display: inline-flex; /* Usar inline-flex para evitar el quiebre de los botones */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Hover en tabletas */
+  .text-button.alex:hover,
+  .text-button.fullstack:hover,
+  .text-button.frontend:hover,
+  .text-button.hablemos:hover {
+    transform: scale(1.05); /* Efecto de escala al hacer hover */
+  }
+
+  /* Hover en el ícono en tabletas */
+  .text-button.alex:hover .icon,
+  .text-button.fullstack:hover .icon,
+  .text-button.frontend:hover .icon,
+  .text-button.hablemos:hover .icon {
+    filter: brightness(0); /* Ajustar brillo del icono */
+  }
+}
