@@ -3,6 +3,7 @@
 
 body {
   font-family: "Zen Dots", serif;
+  background-color: #000;
   margin: 0;
   padding: 0;
   color: #fff;
@@ -192,7 +193,121 @@ body {
   padding-right: 5px; /* Tamaño del icono */
 }
 
-//* --- Estilos Responsivos --- */
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente */
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  width: 100%; /* Cambié el 80% a 100% para asegurar que ocupe todo el ancho */
+  z-index: 1000;
+  box-sizing: border-box;
+  left: 0; /* Asegura que el navbar esté alineado a la izquierda */
+}
+
+.navbar-logo {
+  font-size: 3rem; /* Tamaño del texto de "Alex." */
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  margin: 0;
+}
+
+.navbar-toggle {
+  display: none; /* Ocultamos la imagen en pantallas grandes */
+  width: 40px; /* Ajustamos el tamaño del icono */
+  cursor: pointer;
+  margin-left: 20px; /* Añadimos un margen izquierdo al lado de la imagen */
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px; /* Aumenta el espacio entre los enlaces */
+  margin-left: auto; /* Alinea los enlaces a la derecha */
+}
+
+.navbar-item {
+  color: #000; /* Color del texto negro */
+  padding: 8px 16px; /* Espaciado interno del botón */
+  border-radius: 25px; /* Bordes redondeados */
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-item.sobre-mi {
+  background-color: #FF5757; /* Color de fondo del botón */
+}
+
+.navbar-item.sobre-mi:hover {
+  background-color: #FF8383; /* Color de fondo en hover */
+  transform: scale(1.05); /* Ligero zoom al hacer hover */
+}
+
+.navbar-item.portafolio {
+  background-color: #008FFD; /* Color de fondo del botón */
+}
+
+.navbar-item.portafolio:hover {
+  background-color: #66A9FF; /* Color de fondo en hover */
+  transform: scale(1.05); /* Ligero zoom al hacer hover */
+}
+
+.navbar-item.contacto {
+  background-color: #FA6EE3; /* Color de fondo del botón */
+}
+
+.navbar-item.contacto:hover {
+  background-color: #F8A4D9; /* Color de fondo en hover */
+  transform: scale(1.05); /* Ligero zoom al hacer hover */
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 20px; /* Mantener el mismo padding */
+    justify-content: space-between; /* Alineación de los elementos */
+  }
+
+  .navbar-links {
+    display: none; /* Ocultamos el menú en pantallas pequeñas por defecto */
+    flex-direction: column;
+    align-items: center; /* Centrar los enlaces */
+    gap: 15px; /* Aumenta el espacio entre los enlaces */
+    position: absolute; /* Posicionamos el menú de forma absoluta */
+    top: 80px; /* Lo ubicamos justo debajo del navbar */
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para el menú */
+    z-index: 999; /* Aseguramos que esté encima de otros elementos */
+    padding: 20px 0; /* Añadimos algo de padding */
+  }
+
+  .navbar-links.show {
+    display: flex; /* Muestra el menú cuando se hace clic en el botón */
+  }
+
+  .navbar-toggle {
+    display: block; /* Muestra la imagen del botón en pantallas pequeñas */
+    margin-left: 20px; /* Añade margen a la izquierda para separarla del logo */
+  }
+
+  .navbar-logo {
+    font-size: 2.5rem; /* Reducir el tamaño del logo en pantallas pequeñas */
+  }
+
+  .navbar-item {
+    font-size: 1.2rem; /* Ajuste en el tamaño de los botones en pantallas pequeñas */
+  }
+}
+
+
+/* --- Estilos Responsivos --- */
 
 /* Móviles y pantallas pequeñas */
 @media (max-width: 600px) {
