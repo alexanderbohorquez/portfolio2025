@@ -1,0 +1,160 @@
+.about-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Color blanco para el texto */
+  }
+  
+  .about-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .about-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  
+  /* Estilos responsivos para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .about-content {
+      top: 100px; /* Ajustar la posición superior */
+    }
+  
+    .about-title {
+      font-size: 2rem; /* Reducir el tamaño de fuente */
+      margin-bottom: 8px; /* Reducir el margen inferior */
+    }
+  
+    .about-subtitle {
+      font-size: 1rem; /* Reducir el tamaño de fuente del subtítulo */
+    }
+  }
+  
+  
+  /*! about chat y conten  */
+  .about-content {
+    position: relative; /* Cambiado de 'absolute' a 'relative' */
+    margin: 0 auto; /* Centrar horizontalmente */
+    text-align: center;
+    color: #fff; /* Color blanco para el texto */
+    padding: 20px 0; /* Espaciado arriba y abajo */
+  }
+  
+  /* Estilo del título */
+  .about-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo del subtítulo */
+  .about-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 20px; /* Espacio debajo del subtítulo */
+  }
+  
+  /* Contenedor principal para el chat y contenido adicional */
+  .about-containers {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 20px;
+    gap: 20px; /* Espacio entre los dos contenedores */
+    width: 90%;
+    margin: 0 auto; /* Centrado horizontal */
+  }
+  
+  /* Contenedor del chat */
+  .chat-container {
+    flex: 1; /* Ajusta su ancho proporcionalmente */
+    background-color: #f9f9f900;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: visible; /* Permite scroll si hay muchos mensajes */
+    max-height: 400px;
+    color: #000;
+  }
+  
+  /* Mensajes de chat */
+  /* Contenedor de mensajes */
+  .chat-card {
+    display: flex;
+    flex-direction: column; /* Asegura que los mensajes se apilen verticalmente */
+    margin-bottom: 10px;
+  }
+  
+  /* Mensajes de chat */
+  .chat-message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    max-width: 50%; /* Limita el ancho máximo al 50% */
+  }
+  
+  /* Mensajes del usuario */
+  .user-message {
+    background-color: #d1f7c4;
+    text-align: left;
+    align-self: flex-start; /* Alinea el mensaje del usuario a la izquierda */
+  }
+  
+  /* Mensajes del bot */
+  .bot-message {
+    background-color: #f0f0f0;
+    text-align: right;
+    align-self: flex-end; /* Alinea el mensaje del bot a la derecha */
+  }
+  
+  /* Contenedor de contenido adicional */
+  .additional-content {
+    flex: 1; /* Ajusta su ancho proporcionalmente */
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .about-containers {
+      flex-direction: column; /* Cambia a diseño vertical */
+      gap: 20px; /* Espacio entre los contenedores */
+      align-items: center; /* Centrar los elementos */
+      margin-top: 130px; /* Incrementa el margen superior para moverlos hacia abajo */
+    }
+  
+    .chat-container,
+    .additional-content {
+      width: 90%; /* Ambos ocupan el 90% del ancho */
+      padding: 15px; /* Espaciado interno */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras ligeras */
+      background-color: #fff; /* Fondo blanco para claridad */
+      border-radius: 8px; /* Bordes redondeados */
+    }
+  
+    .about-title {
+      font-size: 2rem; /* Reduce el tamaño del título */
+      margin-bottom: 10px; /* Espacio adicional debajo del título */
+    }
+  
+    .about-subtitle {
+      font-size: 1.2rem; /* Reduce el tamaño del subtítulo */
+      margin-bottom: 20px; /* Espacio adicional debajo del subtítulo */
+    }
+  
+    .chat-container {
+      max-height: 300px; /* Limita la altura del chat en pantallas pequeñas */
+      overflow-y: auto; /* Permite desplazamiento si excede el tamaño */
+    }
+  }
+  
+  

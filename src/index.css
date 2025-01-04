@@ -11,20 +11,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Evitar que se desborde el video */
-  position: relative; /* Necesario para posicionar el video como fondo */
-  animation: fadeIn 2s ease-out; /* Animación de aparición */
+  overflow-y: auto; /* Permite el scroll vertical */
+  position: relative;
+  animation: fadeIn 2s ease-out;
 }
 
 .video-background {
-  position: absolute; /* Posiciona el video detrás del contenido */
+  position: absolute;
+  /* Posiciona el video detrás del contenido */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que el video cubra toda la pantalla */
-  z-index: -1; 
-  filter: brightness(0.5); /* Coloca el video por debajo del contenido */
+  object-fit: cover;
+  /* Asegura que el video cubra toda la pantalla */
+  z-index: -1;
+  filter: brightness(0.5);
+  /* Coloca el video por debajo del contenido */
 }
 
 .container {
@@ -36,20 +39,28 @@ body {
   height: 100%;
   width: 100%;
   padding: 10px;
-  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
-  opacity: 0; /* Comienza oculto */
-  animation: fadeIn 2s ease-out forwards 0.5s; /* Aparece después de 0.5s con un fade-in */
+  box-sizing: border-box;
+  /* Asegura que el padding no afecte el tamaño total */
+  opacity: 0;
+  /* Comienza oculto */
+  animation: fadeIn 2s ease-out forwards 0.5s;
+  /* Aparece después de 0.5s con un fade-in */
 }
 
 /* Animación para la aparición */
 @keyframes fadeIn {
   0% {
-    opacity: 0; /* Comienza invisible */
-    transform: translateY(20px); /* Empieza con desplazamiento hacia abajo */
+    opacity: 0;
+    /* Comienza invisible */
+    transform: translateY(20px);
+    /* Empieza con desplazamiento hacia abajo */
   }
+
   100% {
-    opacity: 1; /* Termina visible */
-    transform: translateY(0); /* Se mueve a su posición original */
+    opacity: 1;
+    /* Termina visible */
+    transform: translateY(0);
+    /* Se mueve a su posición original */
   }
 }
 
@@ -60,137 +71,192 @@ body {
 .profile-image {
   max-width: 300px;
   border-radius: 10px;
-  opacity: 0; /* Comienza oculto */
-  animation: fadeIn 2s ease-out forwards 1s; /* Aparece después de 1s */
+  opacity: 0;
+  /* Comienza oculto */
+  animation: fadeIn 2s ease-out forwards 1s;
+  /* Aparece después de 1s */
 }
 
 /* Estilo de texto principal */
 .text {
   font-size: 2rem;
-  margin-top: 10px; /* Ajusta el espacio superior */
-  margin-bottom: 10px; /* Ajusta el espacio inferior */
-  line-height: 1.5; /* Ajusta la altura de las líneas entre palabras */
-  opacity: 0; /* Comienza oculto */
-  animation: fadeIn 2s ease-out forwards 1.5s; /* Aparece después de 1.5s */
+  margin-top: 10px;
+  /* Ajusta el espacio superior */
+  margin-bottom: 10px;
+  /* Ajusta el espacio inferior */
+  line-height: 1.5;
+  /* Ajusta la altura de las líneas entre palabras */
+  opacity: 0;
+  /* Comienza oculto */
+  animation: fadeIn 2s ease-out forwards 1.5s;
+  /* Aparece después de 1.5s */
 }
 
 /* Estilo de botones */
 .text-button {
-  font-size: 2rem;  /* Igual al tamaño del texto principal */
+  font-size: 2rem;
+  /* Igual al tamaño del texto principal */
   color: #10b981;
   font-weight: bold;
   cursor: pointer;
-  text-decoration: none; /* Elimina el subrayado */
-  opacity: 0; /* Comienza oculto */
-  animation: fadeIn 2s ease-out forwards 2s; /* Aparece después de 2s */
+  text-decoration: none;
+  /* Elimina el subrayado */
+  opacity: 0;
+  /* Comienza oculto */
+  animation: fadeIn 2s ease-out forwards 2s;
+  /* Aparece después de 2s */
 }
 
 /* Estilo especial para "Alex" */
 .text-button.alex {
-  background-color: #FF5757; /* Color de fondo */
-  color: #000; /* Color de texto */
-  padding: 1px 20px; /* Espaciado interno */
-  border-radius: 25px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el hover */
+  background-color: #FF5757;
+  /* Color de fondo */
+  color: #000;
+  /* Color de texto */
+  padding: 1px 20px;
+  /* Espaciado interno */
+  border-radius: 25px;
+  /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Transición para el hover */
 }
 
 /* Efecto hover para el botón "Alex" */
 .text-button.alex:hover {
-  background-color: #FF8383; /* Fondo más claro al hacer hover */
-  color: #000; /* Mantener el texto en negro */
-  transform: scale(1.05); /* Opcional: efecto de escala al hacer hover */
+  background-color: #FF8383;
+  /* Fondo más claro al hacer hover */
+  color: #000;
+  /* Mantener el texto en negro */
+  transform: scale(1.05);
+  /* Opcional: efecto de escala al hacer hover */
 }
 
 /* Aseguramos que el ícono también se vea bien en el hover */
 .text-button.alex:hover .icon {
-  filter: brightness(0); /* Ajustar brillo del icono si es necesario */
+  filter: brightness(0);
+  /* Ajustar brillo del icono si es necesario */
 }
 
 .text-button.alex .icon {
-  width: 18px; /* Tamaño del icono */
+  width: 18px;
+  /* Tamaño del icono */
   height: 18px;
-  padding-right: 5px; /* Tamaño del icono */
+  padding-right: 5px;
+  /* Tamaño del icono */
 }
 
 /* Estilo especial para "Desarrollador Fullstack" */
 .text-button.fullstack {
-  background-color: #008FFD; /* Color de fondo */
-  color: #000; /* Color de texto */
-  padding: 1px 20px; /* Espaciado interno */
-  border-radius: 25px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el hover */
+  background-color: #008FFD;
+  /* Color de fondo */
+  color: #000;
+  /* Color de texto */
+  padding: 1px 20px;
+  /* Espaciado interno */
+  border-radius: 25px;
+  /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Transición para el hover */
 }
 
 /* Efecto hover para el botón "Desarrollador Fullstack" */
 .text-button.fullstack:hover {
-  background-color: #66A9FF; /* Fondo más claro al hacer hover */
-  color: #000; /* Mantener el texto en negro */
-  transform: scale(1.05); /* Opcional: efecto de escala al hacer hover */
+  background-color: #66A9FF;
+  /* Fondo más claro al hacer hover */
+  color: #000;
+  /* Mantener el texto en negro */
+  transform: scale(1.05);
+  /* Opcional: efecto de escala al hacer hover */
 }
 
 /* Aseguramos que el ícono también se vea bien en el hover */
 .text-button.fullstack:hover .icon {
-  filter: brightness(0); /* Ajustar brillo del icono si es necesario */
+  filter: brightness(0);
+  /* Ajustar brillo del icono si es necesario */
 }
 
 .text-button.fullstack .icon {
-  width: 18px; /* Tamaño del icono */
+  width: 18px;
+  /* Tamaño del icono */
   height: 18px;
-  padding-right: 5px; /* Tamaño del icono */
+  padding-right: 5px;
+  /* Tamaño del icono */
 }
 
 /* Estilo especial para "Frontend" */
 .text-button.frontend {
-  background-color: #00B96D; /* Color de fondo */
-  color: #000; /* Color de texto */
-  padding: 1px 20px; /* Espaciado interno */
-  border-radius: 25px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el hover */
+  background-color: #00B96D;
+  /* Color de fondo */
+  color: #000;
+  /* Color de texto */
+  padding: 1px 20px;
+  /* Espaciado interno */
+  border-radius: 25px;
+  /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Transición para el hover */
 }
 
 /* Efecto hover para el botón "Frontend" */
 .text-button.frontend:hover {
-  background-color: #66D9A1; /* Fondo más claro al hacer hover */
-  color: #000; /* Mantener el texto en negro */
-  transform: scale(1.05); /* Opcional: efecto de escala al hacer hover */
+  background-color: #66D9A1;
+  /* Fondo más claro al hacer hover */
+  color: #000;
+  /* Mantener el texto en negro */
+  transform: scale(1.05);
+  /* Opcional: efecto de escala al hacer hover */
 }
 
 /* Aseguramos que el ícono también se vea bien en el hover */
 .text-button.frontend:hover .icon {
-  filter: brightness(0); /* Ajustar brillo del icono si es necesario */
+  filter: brightness(0);
+  /* Ajustar brillo del icono si es necesario */
 }
 
 .text-button.frontend .icon {
-  width: 18px; /* Tamaño del icono */
+  width: 18px;
+  /* Tamaño del icono */
   height: 18px;
-  padding-right: 5px; /* Tamaño del icono */
+  padding-right: 5px;
+  /* Tamaño del icono */
 }
 
 /* Estilo especial para "¡Hablemos!" */
 .text-button.hablemos {
-  background-color: #FA6EE3; /* Color de fondo */
-  color: #000; /* Color de texto */
-  padding: 1px 20px; /* Espaciado interno */
-  border-radius: 25px; /* Bordes redondeados */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para el hover */
+  background-color: #FA6EE3;
+  /* Color de fondo */
+  color: #000;
+  /* Color de texto */
+  padding: 1px 20px;
+  /* Espaciado interno */
+  border-radius: 25px;
+  /* Bordes redondeados */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Transición para el hover */
 }
 
 /* Efecto hover para el botón "¡Hablemos!" */
 .text-button.hablemos:hover {
-  background-color: #F8A4D9; /* Fondo más claro al hacer hover */
-  color: #000; /* Mantener el texto en negro */
-  transform: scale(1.05); /* Opcional: efecto de escala al hacer hover */
+  background-color: #F8A4D9;
+  /* Fondo más claro al hacer hover */
+  color: #000;
+  /* Mantener el texto en negro */
+  transform: scale(1.05);
+  /* Opcional: efecto de escala al hacer hover */
 }
 
 /* Aseguramos que el ícono también se vea bien en el hover */
 .text-button.hablemos:hover .icon {
-  filter: brightness(0); /* Ajustar brillo del icono si es necesario */
+  filter: brightness(0);
+  /* Ajustar brillo del icono si es necesario */
 }
 
 .text-button.hablemos .icon {
-  width: 18px; /* Tamaño del icono */
+  width: 18px;
+  /* Tamaño del icono */
   height: 18px;
-  padding-right: 5px; /* Tamaño del icono */
+  padding-right: 5px;
+  /* Tamaño del icono */
 }
 
 
@@ -199,18 +265,22 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0); /* Fondo semitransparente */
+  background-color: rgba(0, 0, 0, 0);
+  /* Fondo semitransparente */
   padding: 10px 20px;
   position: fixed;
   top: 0;
-  width: 100%; /* Cambié el 80% a 100% para asegurar que ocupe todo el ancho */
+  width: 100%;
+  /* Cambié el 80% a 100% para asegurar que ocupe todo el ancho */
   z-index: 1000;
   box-sizing: border-box;
-  left: 0; /* Asegura que el navbar esté alineado a la izquierda */
+  left: 0;
+  /* Asegura que el navbar esté alineado a la izquierda */
 }
 
 .navbar-logo {
-  font-size: 3rem; /* Tamaño del texto de "Alex." */
+  font-size: 3rem;
+  /* Tamaño del texto de "Alex." */
   font-weight: bold;
   color: #fff;
   text-decoration: none;
@@ -218,22 +288,30 @@ body {
 }
 
 .navbar-toggle {
-  display: none; /* Ocultamos la imagen en pantallas grandes */
-  width: 40px; /* Ajustamos el tamaño del icono */
+  display: none;
+  /* Ocultamos la imagen en pantallas grandes */
+  width: 40px;
+  /* Ajustamos el tamaño del icono */
   cursor: pointer;
-  margin-left: 20px; /* Añadimos un margen izquierdo al lado de la imagen */
+  margin-left: 20px;
+  /* Añadimos un margen izquierdo al lado de la imagen */
 }
 
 .navbar-links {
   display: flex;
-  gap: 30px; /* Aumenta el espacio entre los enlaces */
-  margin-left: auto; /* Alinea los enlaces a la derecha */
+  gap: 30px;
+  /* Aumenta el espacio entre los enlaces */
+  margin-left: auto;
+  /* Alinea los enlaces a la derecha */
 }
 
 .navbar-item {
-  color: #000; /* Color del texto negro */
-  padding: 8px 16px; /* Espaciado interno del botón */
-  border-radius: 25px; /* Bordes redondeados */
+  color: #000;
+  /* Color del texto negro */
+  padding: 8px 16px;
+  /* Espaciado interno del botón */
+  border-radius: 25px;
+  /* Bordes redondeados */
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
@@ -241,113 +319,151 @@ body {
 }
 
 .navbar-item.sobre-mi {
-  background-color: #FF5757; /* Color de fondo del botón */
+  background-color: #FF5757;
+  /* Color de fondo del botón */
 }
 
 .navbar-item.sobre-mi:hover {
-  background-color: #FF8383; /* Color de fondo en hover */
-  transform: scale(1.05); /* Ligero zoom al hacer hover */
+  background-color: #FF8383;
+  /* Color de fondo en hover */
+  transform: scale(1.05);
+  /* Ligero zoom al hacer hover */
 }
 
 .navbar-item.portafolio {
-  background-color: #008FFD; /* Color de fondo del botón */
+  background-color: #008FFD;
+  /* Color de fondo del botón */
 }
 
 .navbar-item.portafolio:hover {
-  background-color: #66A9FF; /* Color de fondo en hover */
-  transform: scale(1.05); /* Ligero zoom al hacer hover */
+  background-color: #66A9FF;
+  /* Color de fondo en hover */
+  transform: scale(1.05);
+  /* Ligero zoom al hacer hover */
 }
 
 .navbar-item.contacto {
-  background-color: #FA6EE3; /* Color de fondo del botón */
+  background-color: #FA6EE3;
+  /* Color de fondo del botón */
 }
 
 .navbar-item.contacto:hover {
-  background-color: #F8A4D9; /* Color de fondo en hover */
-  transform: scale(1.05); /* Ligero zoom al hacer hover */
+  background-color: #F8A4D9;
+  /* Color de fondo en hover */
+  transform: scale(1.05);
+  /* Ligero zoom al hacer hover */
 }
 
 /* Estilos Responsivos */
 @media (max-width: 768px) {
   .navbar {
-    padding: 10px 20px; /* Mantener el mismo padding */
-    justify-content: space-between; /* Alineación de los elementos */
+    padding: 10px 20px;
+    /* Mantener el mismo padding */
+    justify-content: space-between;
+    /* Alineación de los elementos */
   }
 
   .navbar-links {
-    display: none; /* Ocultamos el menú en pantallas pequeñas por defecto */
+    display: none;
+    /* Ocultamos el menú en pantallas pequeñas por defecto */
     flex-direction: column;
-    align-items: center; /* Centrar los enlaces */
-    gap: 15px; /* Aumenta el espacio entre los enlaces */
-    position: absolute; /* Posicionamos el menú de forma absoluta */
-    top: 80px; /* Lo ubicamos justo debajo del navbar */
+    align-items: center;
+    /* Centrar los enlaces */
+    gap: 15px;
+    /* Aumenta el espacio entre los enlaces */
+    position: absolute;
+    /* Posicionamos el menú de forma absoluta */
+    top: 80px;
+    /* Lo ubicamos justo debajo del navbar */
     right: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para el menú */
-    z-index: 999; /* Aseguramos que esté encima de otros elementos */
-    padding: 20px 0; /* Añadimos algo de padding */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo semitransparente para el menú */
+    z-index: 999;
+    /* Aseguramos que esté encima de otros elementos */
+    padding: 20px 0;
+    /* Añadimos algo de padding */
   }
 
   .navbar-links.show {
-    display: flex; /* Muestra el menú cuando se hace clic en el botón */
+    display: flex;
+    /* Muestra el menú cuando se hace clic en el botón */
   }
 
   .navbar-toggle {
-    display: block; /* Muestra la imagen del botón en pantallas pequeñas */
-    margin-left: 20px; /* Añade margen a la izquierda para separarla del logo */
+    display: block;
+    /* Muestra la imagen del botón en pantallas pequeñas */
+    margin-left: 20px;
+    /* Añade margen a la izquierda para separarla del logo */
   }
 
   .navbar-logo {
-    font-size: 2.5rem; /* Reducir el tamaño del logo en pantallas pequeñas */
+    font-size: 2.5rem;
+    /* Reducir el tamaño del logo en pantallas pequeñas */
   }
 
   .navbar-item {
-    font-size: 1.2rem; /* Ajuste en el tamaño de los botones en pantallas pequeñas */
+    font-size: 1.2rem;
+    /* Ajuste en el tamaño de los botones en pantallas pequeñas */
   }
 }
-
 
 /* --- Estilos Responsivos --- */
 
 /* Móviles y pantallas pequeñas */
 @media (max-width: 600px) {
   .profile-image {
-    max-width: 150px; /* Reducir el tamaño de la imagen en móviles */
+    max-width: 150px;
+    /* Reducir el tamaño de la imagen en móviles */
   }
 
   .text {
-    font-size: 1.2rem; /* Ajuste en el tamaño del texto */
+    font-size: 1.2rem;
+    /* Ajuste en el tamaño del texto */
     margin: 10px 0;
-    line-height: 1.8; /* Más espacio entre líneas en el texto */
+    line-height: 1.8;
+    /* Más espacio entre líneas en el texto */
   }
 
   /* Separar los textos específicos */
   .alex {
-    margin-bottom: 10px; /* Añadir más margen abajo */
+    margin-bottom: 10px;
+    /* Añadir más margen abajo */
   }
 
   .fullstack {
-    margin-top: 20px; /* Añadir más margen arriba */
+    margin-top: 20px;
+    /* Añadir más margen arriba */
   }
 
   .container {
-    width: 90%; /* Reducir el ancho del contenedor para pantallas pequeñas */
-    max-width: 600px; /* Definir un max-width para evitar que sea demasiado grande */
+    width: 90%;
+    /* Reducir el ancho del contenedor para pantallas pequeñas */
+    max-width: 600px;
+    /* Definir un max-width para evitar que sea demasiado grande */
   }
 
   .text-button {
-    font-size: 1rem;  /* Reducir el tamaño del texto en los botones */
-    padding: 8px 16px; /* Reducir el padding de los botones */
-    white-space: nowrap; /* Evitar que el texto se rompa en varias líneas */
-    width: auto; /* Asegurarse de que los botones no se estiren en pantallas pequeñas */
-    line-height: 1.8; /* Más espacio entre líneas en los botones */
+    font-size: 1rem;
+    /* Reducir el tamaño del texto en los botones */
+    padding: 8px 16px;
+    /* Reducir el padding de los botones */
+    white-space: nowrap;
+    /* Evitar que el texto se rompa en varias líneas */
+    width: auto;
+    /* Asegurarse de que los botones no se estiren en pantallas pequeñas */
+    line-height: 1.8;
+    /* Más espacio entre líneas en los botones */
   }
 
   /* Ajustar tamaño del icono en móviles */
   .text-button .icon {
-    width: 14px; /* Reducir el tamaño del icono */
-    height: 14px; /* Reducir el tamaño del icono */
-    padding-right: 5px; /* Ajuste en el espacio entre el texto y el icono */
+    width: 14px;
+    /* Reducir el tamaño del icono */
+    height: 14px;
+    /* Reducir el tamaño del icono */
+    padding-right: 5px;
+    /* Ajuste en el espacio entre el texto y el icono */
   }
 
   /* Evitar que los botones se dividan */
@@ -355,7 +471,8 @@ body {
   .text-button.fullstack,
   .text-button.frontend,
   .text-button.hablemos {
-    display: inline-flex; /* Usar inline-flex para evitar el quiebre de los botones */
+    display: inline-flex;
+    /* Usar inline-flex para evitar el quiebre de los botones */
     justify-content: center;
     align-items: center;
   }
@@ -365,7 +482,8 @@ body {
   .text-button.fullstack:hover,
   .text-button.frontend:hover,
   .text-button.hablemos:hover {
-    transform: scale(1.05); /* Efecto de escala al hacer hover */
+    transform: scale(1.05);
+    /* Efecto de escala al hacer hover */
   }
 
   /* Hover en el ícono en móviles */
@@ -373,42 +491,55 @@ body {
   .text-button.fullstack:hover .icon,
   .text-button.frontend:hover .icon,
   .text-button.hablemos:hover .icon {
-    filter: brightness(0); /* Ajustar brillo del icono */
+    filter: brightness(0);
+    /* Ajustar brillo del icono */
   }
 }
 
 /* Tablet */
 @media (max-width: 768px) {
   .text {
-    font-size: 1.3rem; /* Ajuste en el tamaño del texto en tabletas */
-    line-height: 1.8; /* Más espacio entre líneas en el texto */
+    font-size: 1.3rem;
+    /* Ajuste en el tamaño del texto en tabletas */
+    line-height: 1.8;
+    /* Más espacio entre líneas en el texto */
   }
 
   /* Separar los textos específicos */
   .alex {
-    margin-bottom: 8px; /* Añadir más margen abajo */
+    margin-bottom: 8px;
+    /* Añadir más margen abajo */
   }
 
   .fullstack {
-    margin-top: 8px; /* Añadir más margen arriba */
+    margin-top: 8px;
+    /* Añadir más margen arriba */
   }
 
   .container {
-    width: 100%; /* Ajuste en el ancho del contenedor en tabletas */
-    max-width: 750px; /* Definir un max-width para evitar que sea demasiado grande */
+    width: 100%;
+    /* Ajuste en el ancho del contenedor en tabletas */
+    max-width: 750px;
+    /* Definir un max-width para evitar que sea demasiado grande */
   }
 
   .text-button {
-    font-size: 1.3rem;  /* Ajuste en el tamaño de los botones en tabletas */
-    padding: 10px 0px; /* Ajuste en el padding de los botones en tabletas */
-    line-height: 1.8; /* Más espacio entre líneas en los botones */
+    font-size: 1.3rem;
+    /* Ajuste en el tamaño de los botones en tabletas */
+    padding: 10px 0px;
+    /* Ajuste en el padding de los botones en tabletas */
+    line-height: 1.8;
+    /* Más espacio entre líneas en los botones */
   }
 
   /* Ajustar tamaño del icono en tabletas */
   .text-button .icon {
-    width: 18px; /* Ajustar el tamaño del icono */
-    height: 18px; /* Ajustar el tamaño del icono */
-    padding-right: 5px; /* Ajuste en el espacio entre el texto y el icono */
+    width: 18px;
+    /* Ajustar el tamaño del icono */
+    height: 18px;
+    /* Ajustar el tamaño del icono */
+    padding-right: 5px;
+    /* Ajuste en el espacio entre el texto y el icono */
   }
 
   /* Evitar que los botones se dividan */
@@ -416,7 +547,8 @@ body {
   .text-button.fullstack,
   .text-button.frontend,
   .text-button.hablemos {
-    display: inline-flex; /* Usar inline-flex para evitar el quiebre de los botones */
+    display: inline-flex;
+    /* Usar inline-flex para evitar el quiebre de los botones */
     justify-content: center;
     align-items: center;
   }
@@ -426,7 +558,8 @@ body {
   .text-button.fullstack:hover,
   .text-button.frontend:hover,
   .text-button.hablemos:hover {
-    transform: scale(1.05); /* Efecto de escala al hacer hover */
+    transform: scale(1.05);
+    /* Efecto de escala al hacer hover */
   }
 
   /* Hover en el ícono en tabletas */
@@ -434,6 +567,200 @@ body {
   .text-button.fullstack:hover .icon,
   .text-button.frontend:hover .icon,
   .text-button.hablemos:hover .icon {
-    filter: brightness(0); /* Ajustar brillo del icono */
+    filter: brightness(0);
+    /* Ajustar brillo del icono */
   }
 }
+
+
+
+
+
+
+.about-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Color blanco para el texto */
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .about-content {
+    top: 100px; /* Ajustar la posición superior */
+  }
+
+  .about-title {
+    font-size: 2rem; /* Reducir el tamaño de fuente */
+    margin-bottom: 8px; /* Reducir el margen inferior */
+  }
+
+  .about-subtitle {
+    font-size: 1rem; /* Reducir el tamaño de fuente del subtítulo */
+  }
+}
+
+
+/*! about chat y conten  */
+.about-content {
+  position: relative; /* Cambiado de 'absolute' a 'relative' */
+  margin: 0 auto; /* Centrar horizontalmente */
+  text-align: center;
+  color: #fff; /* Color blanco para el texto */
+  padding: 20px 0; /* Espaciado arriba y abajo */
+}
+
+/* Estilo del título */
+.about-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Estilo del subtítulo */
+.about-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 20px; /* Espacio debajo del subtítulo */
+}
+
+/* Contenedor principal para el chat y contenido adicional */
+.about-containers {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+  gap: 20px; /* Espacio entre los dos contenedores */
+  width: 90%;
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+
+
+
+
+
+.chat-container {
+  flex: 1; /* Ajusta su ancho proporcionalmente */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Permite scroll si hay muchos mensajes */
+  max-height: 400px;
+  padding: 15px;
+  color: #000;
+  background-color: #00bb77;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon fill='%23000' fill-opacity='.1' points='120 0 120 60 90 30 60 0 0 0 0 0 60 60 0 120 60 120 90 90 120 60 120 0'/%3E%3C/svg%3E");
+border: 1px solid #ffffff;
+  width: 100%; /* Asegura que el ancho ocupe todo el contenedor */
+
+}
+
+/* Contenedor de mensajes */
+.chat-card {
+  display: flex;
+  flex-direction: column; /* Asegura que los mensajes se apilen verticalmente */
+  margin-bottom: 10px;
+}
+
+/* Mensajes de chat */
+.chat-message {
+  margin: 1px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  max-width: 50%; /* Limita el ancho máximo al 50% */
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+}
+
+/* Personalización de la barra de desplazamiento */
+.chat-container::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.chat-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Color de fondo de la pista */
+  border-radius: 10px; /* Bordes redondeados para la pista */
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Color del pulgar (parte que se mueve) */
+  border-radius: 10px; /* Bordes redondeados para el pulgar */
+  border: 2px solid rgba(255, 255, 255, 0.8); /* Borde para hacer que resalte */
+}
+
+.chat-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* Color del pulgar al hacer hover */
+}
+
+
+/* Mensajes del usuario */
+.user-message {
+  background-color: rgba(209, 247, 196, 0.8); /* Fondo semi-transparente con color personalizado */
+  text-align: left;
+  align-self: flex-start; /* Alinea el mensaje del usuario a la izquierda */
+}
+
+/* Mensajes del bot */
+.bot-message {
+  text-align: right;
+  align-self: flex-end; /* Alinea el mensaje del bot a la derecha */
+}
+
+
+/* Contenedor de contenido adicional */
+.additional-content {
+  flex: 1; /* Ajusta su ancho proporcionalmente */
+  background-color: #e3f2fd;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .about-containers {
+    flex-direction: column; /* Cambia a diseño vertical */
+    gap: 20px; /* Espacio entre los contenedores */
+    align-items: center; /* Centrar los elementos */
+    margin-top:50px; /* Incrementa el margen superior para moverlos hacia abajo */
+  }
+
+  .chat-container,
+  .additional-content {
+    width: 90%; /* Ambos ocupan el 90% del ancho */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras ligeras */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+
+  .about-title {
+    font-size: 2rem; /* Reduce el tamaño del título */
+    margin-bottom: 10px; /* Espacio adicional debajo del título */
+  }
+
+  .about-subtitle {
+    font-size: 1.2rem; /* Reduce el tamaño del subtítulo */
+    margin-bottom: 20px; /* Espacio adicional debajo del subtítulo */
+  }
+
+  .chat-container {
+    max-height: 300px; /* Limita la altura del chat en pantallas pequeñas */
+    overflow-y: scroll; /* Permite desplazamiento si excede el tamaño */
+  }
+}
+
